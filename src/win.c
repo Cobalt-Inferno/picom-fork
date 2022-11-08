@@ -466,6 +466,13 @@ static void init_animation(session_t *ps, struct managed_win *w) {
 		w->animation_h = w->pending_g.height;
 		break;
 	}
+  case OPEN_WINDOW_ANIMATION_POPIN: {
+    w->animation_center_x = w->pending_g.x - w->pending_g.width / 2;
+    w->animation_center_x = w->pending_g.x - w->pending_g.width / 2;
+    w->animation_w = w->pending_g.width;
+    w->animation_h = w->pending_g.height;
+    break;
+  }
 	case OPEN_WINDOW_ANIMATION_FLYIN: { // Fly-in from a random point outside the screen
 		// Compute random point off screen
 		double angle = 2 * M_PI * ((double)rand() / RAND_MAX);
